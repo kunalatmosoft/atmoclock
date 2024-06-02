@@ -5,6 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px; /* Default width */
+    background: linear-gradient(to bottom, #282828, #6c6868, #262525); /* Gradient background */
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 68px) {
+    .sidebar {
+      width: 180px; /* Adjusted width for smaller screens */
+    }
+  }
+  
+  /* Media query for even smaller screens */
+  @media screen and (max-width: 576px) {
+    .sidebar {
+      width: 120px; /* Further adjusted width for very small screens */
+    }
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+    overflow-y: auto;
+    background-color: #f4f4f4; /* Background color for content */
+    border-left: 1px solid #ccc; /* Border to separate sidebar from content */
+  }
+  
+  .content h2 {
+    margin-top: 0;
+  }
+  
+  .content p {
+    line-height: 1.6;
+  }
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-bar button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #45a049;
+  }
+  
+  .code-container {
+    position: relative;
+    background: #3e3e3e;
+    padding: 10px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background: #0056b3;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: #fff;
+
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-dark.min.css">
 </head>
 <body>
