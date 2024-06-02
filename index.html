@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="dashboard">
+    <div class="sidebar">
+      <h2 >Motion.js</h2>
+      <ul>
+        <li><a href="#s1">Installation</a></li>
+        <li><a href="#s2">Owner</a></li>
+        <li><a href="#s3">functions</a></li>
+        <li><a href="#">Contribute</a></li>
+      </ul>
+    </div>
+    <div class="content">
+        <h2 id="s3">Main Content Area</h2>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button>Search</button>
+        </div>
+              <p>Welcome to your dashboard!</p>
+    <section id="s1">
+        <h2>python</h2>
+
+        <div class="code-container">
+
+            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+            <pre><code class="language-python">
+    # Example Python code
+    def greet(name):
+        return f"Hello, {name}!"
+    
+    print(greet("World"))
+            </code></pre>
+        </div>
+    
+    </section>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque unde sequi amet iusto repudiandae, natus officiis fugit soluta quo eos excepturi velit doloribus porro a provident dicta eum aut accusantium perspiciatis? Itaque iste temporibus ullam, eligendi autem nihil laboriosam omnis quas alias voluptatem quidem fuga eius voluptates hic id animi quasi quaerat cum! Molestiae ea nesciunt quis asperiores consequatur natus magni reiciendis eveniet quidem, ipsum fuga vero et sint. Distinctio recusandae, ipsum soluta, unde inventore aliquam odio ab dolorum saepe molestiae delectus rem illum nobis tempore. Deleniti eum ipsum quae.</p>
+    <section id="s2">
+        <div class="code-container">
+            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+            <pre><code class="language-html">
+    <!-- Example HTML code -->
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Hello World&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+            </code></pre>
+        </div>
+    </section>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function copyToClipboard(button) {
+        var codeContainer = button.nextElementSibling;
+        var range = document.createRange();
+        range.selectNode(codeContainer);
+        window.getSelection().removeAllRanges(); // clear current selection
+        window.getSelection().addRange(range); // to select text
+        try {
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges(); // to deselect
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = 'Copy';
+            }, 2000);
+        } catch (err) {
+            console.log('Failed to copy!', err);
+        }
+    }
+</script>
+  <script src="scripts.js"></script>
+</body>
+</html>
